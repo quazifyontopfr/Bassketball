@@ -1,0 +1,54 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+-- Check if Rayfield is loaded correctly
+if not Rayfield then
+    warn("Failed to load Rayfield library")
+    return
+end
+
+local Window = Rayfield:CreateWindow({
+    Name = "Ahtapot Hub",
+    LoadingTitle = "Ahtapot",
+    LoadingSubtitle = "by Ahtapot",
+    ConfigurationSaving = {
+       Enabled = false,
+       FileName = "Ahtapot Script Hub"
+    },
+    Discord = {
+       Enabled = true,
+       Invite = "Bm6sZEUkK2",
+       RememberJoins = true
+    },
+    KeySystem = true,
+    KeySettings = {
+       Title = "Ahtapot Script Hub| Key",
+       Subtitle = "Link In Discord Server",
+       Note = "Join Server From Misc Tab",
+       FileName = "BladeBallKey",
+       SaveKey = false,
+       GrabKeyFromSite = true,
+       Key = {"223Bro223broski"}
+    }
+})
+
+if not Window then
+    warn("Failed to create window. Please check the Rayfield library or script parameters.")
+    return
+end
+
+local MainTab = Window:CreateTab("Main", nil) -- Title, Image
+local MainSection = MainTab:CreateSection("Useful") -- Changed 'Tab' to 'MainTab'
+
+local Button = MainTab:CreateButton({
+    Name = "Auto Perfect",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/PunchMadeScript/Basketball-Legends/refs/heads/main/Auto%20perfect"))();
+    end,
+})
+
+local Button = MainTab:CreateButton({
+    Name = "Auto Guard",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/PunchMadeScript/Basketball-Legends/refs/heads/main/Auto%20guard"))();
+    end,
+})
